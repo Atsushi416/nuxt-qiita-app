@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  nuxt:
+    container_name: qiita_app
+    build: ./docker/node
+    #  image: nuxt_app_image
+    volumes:
+      - ./app:/app
+    # コンテナ内部の9000を外部から9000でアクセス
+    ports:
+      - "9000:9000"
+    tty: true
